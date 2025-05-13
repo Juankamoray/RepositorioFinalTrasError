@@ -1,11 +1,9 @@
 package dao;
-
-import modelo.Estudiante;
 import util.ConexionBD;
-
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import dto.Estudiante;
 
 public class EstudianteDAO {
 
@@ -39,8 +37,8 @@ public class EstudianteDAO {
             while (rs.next()) {
                 Estudiante est = new Estudiante();
                 est.setId(rs.getInt("id"));
-                est.setNombre(rs.getString("nombre_completo"));
-                est.setEmail(rs.getString("correo"));
+                est.setNombre(rs.getString("nombre"));
+                est.setEmail(rs.getString("Email"));
                 est.setPais(rs.getString("pais"));
                 est.setFechaNacimiento(rs.getDate("fecha_nacimiento").toLocalDate());
 

@@ -1,7 +1,7 @@
 package main;
 
 import dao.EstudianteDAO;
-import modelo.Estudiante;
+import dto.Estudiante;
 
 import java.time.LocalDate;
 
