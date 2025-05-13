@@ -4,7 +4,7 @@ public class Curso {
 	private String titulo;
 	private String descripcion;
 	private int duracionSemanas;
-	private String nivel; // hay 3 tipos, (básico, intermedio, avanzado)
+	private String nivel; 
 	private int idProfesor; 
 
 	public Curso() {}

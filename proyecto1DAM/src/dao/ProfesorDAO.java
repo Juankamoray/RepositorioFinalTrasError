@@ -60,6 +60,6 @@ public class ProfesorDAO {
             System.out.println("Error al obtener profesores: " + e.getMessage());
         }
 
-        return lista; //
+        return lista; 
     }
 }
