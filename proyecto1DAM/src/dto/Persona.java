@@ -8,7 +8,7 @@ public abstract class Persona {
 	//constructor
 	public Persona() {}
 
-	public Persona(int id, String nombre, String email, String pais) {
+	public Persona(int id,String nombre, String email, String pais) {
 		this.id = id;
 		this.nombre = nombre;
 		this.email = email;

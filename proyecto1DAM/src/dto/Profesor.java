@@ -5,7 +5,7 @@ public class Profesor extends Persona implements Registrable {
 
     public Profesor() {}
 
-    public Profesor(int id, String nombre, String email, String pais, String especialidad) {
+    public Profesor(int id,String nombre, String email, String pais, String especialidad) {
         super(id, nombre, email, pais); // herencia persona
         this.especialidad = especialidad;
     }

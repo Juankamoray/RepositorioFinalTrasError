@@ -46,7 +46,7 @@ public class ProfesorDAO {
                 Profesor profesor = new Profesor(); // Creamos un objeto Profesor vacío
 
                 // Asignamos los valores de cada columna al objeto Profesor
-                profesor.setId(rs.getInt("id"));
+               
                 profesor.setNombre(rs.getString("nombre"));
                 profesor.setEmail(rs.getString("email"));
                 profesor.setPais(rs.getString("pais"));
@@ -62,4 +62,21 @@ public class ProfesorDAO {
 
         return lista; 
     }
+    public boolean existeProfesor(int idProfesor) {
+        String sql = "SELECT COUNT(*) FROM profesores WHERE id = ?";
+        try (
+            Connection con = ConexionBD.obtenerConexion();
+            PreparedStatement ps = con.prepareStatement(sql)
+        ) {
+            ps.setInt(1, idProfesor);
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+                return rs.getInt(1) > 0;
+            }
+        } catch (SQLException e) {
+            System.out.println("Error al comprobar si existe el profesor: " + e.getMessage());
+        }
+        return false;
+    }
+
 }

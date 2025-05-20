@@ -10,7 +10,7 @@ import java.util.List;
 public class CursoDAO {
 
     public boolean insertarCurso(Curso curso) {
-        String sql = "INSERT INTO cursos (titulo, descripcion, duracionSemanas, nivel, id_profesor) VALUES (?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO cursos (titulo, descripcion, duracionSemanas, nivel, id_Profesor) VALUES (?, ?, ?, ?, ?)";
 
         try (
  Connection con = ConexionBD.obtenerConexion(); // esto sirve para obtener la conexion a la base de datos
@@ -21,7 +21,7 @@ public class CursoDAO {
             ps.setString(2, curso.getDescripcion());
             ps.setInt(3, curso.getDuracionSemanas());
             ps.setString(4, curso.getNivel());
-            ps.setInt(5, curso.getIdProfesor());
+            ps.setInt(5, curso.getId());
 
             
             //aqui ya se ha ejecutado nuestra consulta y se ha insertado a la BD
